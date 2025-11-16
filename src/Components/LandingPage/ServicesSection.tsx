@@ -8,6 +8,11 @@ import {
   CameraIcon,
 } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface Service {
   name: string;
@@ -141,7 +146,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-gray-50 py-12 lg:py-16">
+    <section className="container  mx-auto bg-gray-50 pt-12 lg:py-16">
       <div className=" mx-auto px-6 lg:px-16">
         {/* Header */}
         <div className="text-center mb-12">
@@ -153,8 +158,8 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* Services Grid */}
-        <div className="space-y-6">
+        {/* Services Grid - Swipeable on mobile */}
+        <div className="hidden lg:block space-y-6">
           {/* First row: 2 services */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {services.slice(0, 2).map((service, index) => (
@@ -172,6 +177,24 @@ export default function ServicesSection() {
               />
             ))}
           </div>
+        </div>
+
+        {/* Swiper for mobile */}
+        <div className="lg:hidden [&_.swiper-button-next]:text-black [&_.swiper-button-next]:bg-white/80 [&_.swiper-button-next]:w-8 [&_.swiper-button-next]:h-8 [&_.swiper-button-next]:rounded-full [&_.swiper-button-prev]:text-black [&_.swiper-button-prev]:bg-white/80 [&_.swiper-button-prev]:w-8 [&_.swiper-button-prev]:h-8 [&_.swiper-button-prev]:rounded-full [&_.swiper-button-next:after]:text-sm [&_.swiper-button-prev:after]:text-sm [&_.swiper-pagination-bullet]:bg-black [&_.swiper-pagination-bullet]:opacity-50 [&_.swiper-pagination-bullet-active]:bg-secondary [&_.swiper-pagination-bullet-active]:opacity-100">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={24}
+            slidesPerView={1}
+            className="pb-12"
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={service.name}>
+                <ServiceCard service={service} index={index} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

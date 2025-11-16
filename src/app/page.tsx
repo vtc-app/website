@@ -12,7 +12,6 @@ import ServicesSection from "@/Components/LandingPage/ServicesSection";
 import CompanyStatsSection from "@/Components/LandingPage/CompanyStatsSection";
 import VehiclesSection from "@/Components/LandingPage/VehiclesSection";
 import DriversSection from "@/Components/LandingPage/DriversSection";
-import ReviewsSection from "@/Components/LandingPage/ReviewsSection";
 import CoverageAreaSection from "@/Components/LandingPage/CoverageAreaSection";
 
 export default function Home() {
@@ -27,11 +26,10 @@ export default function Home() {
       <HeroSection />
       <IntroductionSection />
       <ServicesSection />
-      <CompanyStatsSection />
+      {/* <CompanyStatsSection /> */}
       <DriversSection />
       <VehiclesSection />
       <CoverageAreaSection />
-      <ReviewsSection />
       <ReservationSection />
       <ContactSection />
       <Footer />

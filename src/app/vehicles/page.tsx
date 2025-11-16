@@ -4,6 +4,11 @@ import NavBar from "@/Components/Navigation/NavBar";
 import Footer from "@/Components/Navigation/Footer";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function VehiclesPage() {
   const { t } = useTranslation("common");
@@ -11,7 +16,13 @@ export default function VehiclesPage() {
   const vehicles = [
     {
       name: "Toyota Corolla Hybrid",
-      image: "/img/cars/toyota-corolla-hybrid.jpg",
+      driver: "Anis Ouerghi",
+      images: [
+        "/img/cars/Toyota Corolla Hybrid 2023/image1.png",
+        "/img/cars/Toyota Corolla Hybrid 2023/image2.png",
+        "/img/cars/Toyota Corolla Hybrid 2023/image3.jpeg",
+        "/img/cars/Toyota Corolla Hybrid 2023/image4.jpeg",
+      ],
       passengers: 4,
       luggage: 3,
       category: "Hybrid Sedan",
@@ -25,7 +36,14 @@ export default function VehiclesPage() {
     },
     {
       name: "Hyundai Ioniq 5",
-      image: "/img/cars/Hyundai ionique 5.webp",
+      driver: "Azidine Zigham",
+      images: [
+        "/img/cars/Hyundai Ioniq 5 2021/image1.png",
+        "/img/cars/Hyundai Ioniq 5 2021/image2.png",
+        "/img/cars/Hyundai Ioniq 5 2021/image3.png",
+        "/img/cars/Hyundai Ioniq 5 2021/image4.png",
+        "/img/cars/Hyundai Ioniq 5 2021/image5.png",
+      ],
       passengers: 5,
       luggage: 2,
       category: "Electric SUV",
@@ -39,7 +57,12 @@ export default function VehiclesPage() {
     },
     {
       name: "Hyundai Ioniq Hybrid",
-      image: "/img/cars/hyundai-ioniq-5-n_0.jpg",
+      driver: "Djamel mechia",
+      images: [
+        "/img/cars/Hyundai Ioniq 2021/image1.png",
+        "/img/cars/Hyundai Ioniq 2021/image2.png",
+        "/img/cars/Hyundai Ioniq 2021/image3.jpg",
+      ],
       passengers: 5,
       luggage: 3,
       category: "Hybrid Sedan",
@@ -52,17 +75,23 @@ export default function VehiclesPage() {
       ],
     },
     {
-      name: "Mercedes-Benz Classe V",
-      image: "/img/cars/Mercedes-Benz-Classe-V.jpg",
-      passengers: 8,
-      luggage: 6,
-      category: "Premium Van",
+      name: "Toyota CH-R",
+      driver: "Riadh Zigham",
+      images: [
+        "/img/cars/Toyota ch-r/image1.png",
+        "/img/cars/Toyota ch-r/image2.png",
+        "/img/cars/Toyota ch-r/image3.jpeg",
+        "/img/cars/Toyota ch-r/image4.jpeg",
+      ],
+      passengers: 5,
+      luggage: 2,
+      category: "Compact SUV",
       features: [
-        "Group Transport",
+        "Eco-friendly",
         "Air Conditioning",
         "GPS",
         "WiFi",
-        "Spacious",
+        "Modern Design",
       ],
     },
   ];
@@ -95,21 +124,32 @@ export default function VehiclesPage() {
                   key={index}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100"
                 >
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={vehicle.image}
-                      alt={vehicle.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    <div className="absolute top-4 left-4">
+                  <div className="relative h-64 overflow-hidden [&_.swiper-button-next]:text-white [&_.swiper-button-next]:bg-black/50 [&_.swiper-button-next]:w-8 [&_.swiper-button-next]:h-8 [&_.swiper-button-next]:rounded-full [&_.swiper-button-next]:hover:bg-black/70 [&_.swiper-button-prev]:text-white [&_.swiper-button-prev]:bg-black/50 [&_.swiper-button-prev]:w-8 [&_.swiper-button-prev]:h-8 [&_.swiper-button-prev]:rounded-full [&_.swiper-button-prev]:hover:bg-black/70 [&_.swiper-button-next:after]:text-sm [&_.swiper-button-prev:after]:text-sm [&_.swiper-pagination-bullet]:bg-white [&_.swiper-pagination-bullet]:opacity-50 [&_.swiper-pagination-bullet-active]:bg-secondary [&_.swiper-pagination-bullet-active]:opacity-100">
+                    <Swiper
+                      modules={[Navigation, Pagination]}
+                      navigation
+                      pagination={{ clickable: true }}
+                      className="h-full w-full"
+                    >
+                      {vehicle.images.map((image, imgIndex) => (
+                        <SwiperSlide key={imgIndex}>
+                          <Image
+                            src={image}
+                            alt={`${vehicle.name} - Image ${imgIndex + 1}`}
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none z-10" />
+                    <div className="absolute top-4 left-4 z-20">
                       <span className="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                        {vehicle.category}
+                        {vehicle.driver}
                       </span>
                     </div>
-                    <div className="absolute bottom-4 left-4 right-4">
+                    <div className="absolute bottom-4 left-4 right-4 z-20">
                       <h3 className="text-xl font-bold text-white mb-1">
                         {vehicle.name}
                       </h3>

@@ -113,7 +113,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-6 lg:px-10">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">

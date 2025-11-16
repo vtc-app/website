@@ -79,26 +79,26 @@ export default function CompanyStatsSection() {
 
   const stats = [
     {
-      number: 10,
-      label: "Années d'expérience",
+      number: 5,
+      label: t("stats.yearsExperience"),
+      suffix: "",
+      hasPlus: true,
+    },
+    {
+      number: 4,
+      label: t("stats.vehicles"),
       suffix: "",
       hasPlus: false,
     },
     {
       number: 4,
-      label: "Véhicules premium",
-      suffix: "",
-      hasPlus: false,
-    },
-    {
-      number: 4,
-      label: "Chauffeurs professionnels",
+      label: t("stats.employees"),
       suffix: "",
       hasPlus: false,
     },
     {
       number: 5000,
-      label: "Clients satisfaits",
+      label: t("stats.clients"),
       suffix: "",
       hasPlus: true,
     },
@@ -109,11 +109,10 @@ export default function CompanyStatsSection() {
       <div className="container mx-auto px-6 lg:px-16">
         <div className="text-center mb-12 opacity-0 -translate-x-1">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            VTC Marseille en Chiffres
+            {t("stats.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Plus de 10 ans d&apos;expertise dans le transport de personnes avec
-            un service de qualité reconnu dans toute la région marseillaise.
+            {t("stats.description")}
           </p>
         </div>
 

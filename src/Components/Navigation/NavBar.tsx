@@ -13,7 +13,6 @@ import {
 } from "@headlessui/react";
 import React from "react";
 import {
-  CubeIcon,
   CogIcon,
   TruckIcon,
   WrenchScrewdriverIcon,
@@ -71,13 +70,13 @@ export default function NavBar() {
           <a href={"/"} className="-m-1.5 p-1.5">
             <img
               alt="VTC Marseille Premium Logo"
-              src="/img/logos/logo-full.png"
+              src="/img/logos/logo_white.png"
               className="h-8 w-auto lg:hidden"
             />
             <img
               alt="VTC Marseille Premium Logo"
-              src="/img/logos/logo-full.png"
-              className="h-12 w-[230px] lg:block hidden"
+              src="/img/logos/logo_white.png"
+              className="h-12 w-[180px] lg:block hidden"
             />
           </a>
         </div>
@@ -89,8 +88,8 @@ export default function NavBar() {
               onClick={() => switchLanguage("fr")}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                 locale === "fr"
-                  ? "bg-primary text-white"
-                  : "text-gray-600 hover:text-primary hover:bg-primary/10"
+                  ? "bg-secondary text-white"
+                  : "text-gray-600 hover:text-secondary hover:bg-secondary/10"
               }`}
             >
               FR
@@ -99,8 +98,8 @@ export default function NavBar() {
               onClick={() => switchLanguage("en")}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
                 locale === "en"
-                  ? "bg-primary text-white"
-                  : "text-gray-600 hover:text-primary hover:bg-primary/10"
+                  ? "bg-secondary text-white"
+                  : "text-gray-600 hover:text-secondary hover:bg-secondary/10"
               }`}
             >
               EN
@@ -119,54 +118,51 @@ export default function NavBar() {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Link
             href="/"
-            className="text-sm/6 font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
+            className="text-sm/6 font-semibold text-gray-900 hover:text-secondary transition-colors duration-300"
           >
             {t("footer.home")}
           </Link>
           <Link
             href="/about"
-            className="text-sm/6 font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
+            className="text-sm/6 font-semibold text-gray-900 hover:text-secondary transition-colors duration-300"
           >
             {t("footer.about")}
           </Link>
           <Link
             href="/vehicles"
-            className="text-sm/6 font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
+            className="text-sm/6 font-semibold text-gray-900 hover:text-secondary transition-colors duration-300"
           >
             Véhicules
           </Link>
           <Popover className="relative">
-            <PopoverButton className="focus:outline-none focus:ring-0 flex items-center gap-x-1 text-sm/6 font-semibold cursor-pointer text-gray-900 hover:text-primary transition-colors duration-300">
+            <PopoverButton className="focus:outline-none focus:ring-0 flex items-center gap-x-1 text-sm/6 font-semibold cursor-pointer text-gray-900 hover:text-secondary transition-colors duration-300">
               {t("footer.services")}
               <ChevronDownIcon
                 aria-hidden="true"
-                className="size-5 flex-none text-gray-900 group-data-[open]:rotate-180 transition-transform duration-300"
+                className="size-5 flex-none text-gray-900 group-data-[open]:text-secondary group-data-[open]:rotate-180 transition-all duration-300"
               />
             </PopoverButton>
 
             <PopoverPanel
               transition
-              className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl border border-gray-100 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+              className="absolute left-1/2 z-50 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-2xl bg-white shadow-2xl border border-gray-100 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
             >
               <div className="p-1">
                 {services.map(item => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-4 rounded-xl p-1 text-sm/6 hover:bg-primary/5 transition-all duration-300"
+                    className="group relative flex items-center gap-x-4 rounded-xl p-1 text-sm/6 hover:bg-secondary/5 transition-all duration-300"
                   >
-                    <div
-                      className="flex size-12 flex-none items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary transition-all duration-300"
-                      style={{ backgroundColor: "rgba(148, 176, 185, 0.1)" }}
-                    >
+                    <div className="flex size-12 flex-none items-center justify-center rounded-xl bg-secondary/10 group-hover:bg-secondary transition-all duration-300">
                       <item.icon
                         aria-hidden="true"
-                        className="size-6 text-primary transition-colors duration-300"
+                        className="size-6 text-secondary group-hover:text-white transition-colors duration-300"
                       />
                     </div>
                     <div className="flex-auto">
                       <a
                         href={item.href}
-                        className="block font-semibold text-gray-900 group-hover:text-primary transition-colors duration-300"
+                        className="block font-semibold text-gray-900 group-hover:text-secondary transition-colors duration-300"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
@@ -175,7 +171,7 @@ export default function NavBar() {
                   </div>
                 ))}
               </div>
-              <div className="bg-primary hover:bg-primary/90 transition-colors duration-300 rounded-b-2xl">
+              <div className="bg-secondary hover:bg-secondary/90 transition-colors duration-300 rounded-b-2xl">
                 <a
                   href={"/contact"}
                   className="flex items-center justify-center gap-x-2.5 p-4 text-sm/6 font-semibold text-white hover:text-white"
@@ -197,8 +193,8 @@ export default function NavBar() {
               onClick={() => switchLanguage("fr")}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${
                 locale === "fr"
-                  ? "bg-primary text-white"
-                  : "text-gray-600 hover:text-primary hover:bg-primary/10"
+                  ? "bg-secondary text-white"
+                  : "text-gray-600 hover:text-secondary hover:bg-secondary/10"
               }`}
             >
               🇫🇷 FR
@@ -207,8 +203,8 @@ export default function NavBar() {
               onClick={() => switchLanguage("en")}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${
                 locale === "en"
-                  ? "bg-primary text-white"
-                  : "text-gray-600 hover:text-primary hover:bg-primary/10"
+                  ? "bg-secondary text-white"
+                  : "text-gray-600 hover:text-secondary hover:bg-secondary/10"
               }`}
             >
               🇬🇧 EN
@@ -233,7 +229,7 @@ export default function NavBar() {
                 <span className="sr-only">VTC Marseille</span>
                 <img
                   alt=""
-                  src="/img/logos/logo-full.png"
+                  src="/img/logos/logo_white.png"
                   className="h-8 w-auto"
                 />
               </a>

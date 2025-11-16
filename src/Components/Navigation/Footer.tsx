@@ -34,8 +34,8 @@ export default function Footer() {
         <div className="md:col-span-2 space-y-4">
           <Link href="/" className="block h-8 w-fit">
             <Image
-              src="/img/logos/logo-full.png"
-              alt="VTC Marseille Premium Logo"
+              src="/img/logos/logo_white.png"
+              alt="MassiliaDrive Logo"
               width={200}
               height={32}
               className="h-8 w-auto"

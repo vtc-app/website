@@ -14,33 +14,18 @@ export function CustomButton({
   onClick,
   href,
 }: CustomButtonProps) {
-  const differentClasses = isWhite
-    ? "border-2 bg-white hover:bg-faint"
-    : "text-white";
-
-  const buttonClassName = `md:px-5 px-3 py-2 md:text-md rounded-md shadow-md font-semibold hover:cursor-pointer transition duration-300 w-fit ${differentClasses}`;
-  const buttonStyle = isWhite
-    ? { borderColor: "#054eb4", color: "#054eb4" }
-    : { backgroundColor: "#054eb4" };
+  const buttonClassName = isWhite
+    ? "md:px-5 px-3 py-2 md:text-md rounded-md shadow-md font-semibold hover:cursor-pointer transition duration-300 w-fit border-2 bg-white hover:bg-faint border-secondary text-secondary"
+    : "md:px-5 px-3 py-2 md:text-md rounded-md shadow-md font-semibold hover:cursor-pointer transition duration-300 w-fit bg-primary text-white";
 
   return (
     <div className="pt-2">
       {href ? (
-        <Link
-          href={href}
-          className={buttonClassName}
-          style={buttonStyle}
-          onClick={onClick}
-        >
+        <Link href={href} className={buttonClassName} onClick={onClick}>
           {children}
         </Link>
       ) : (
-        <button
-          type="button"
-          className={buttonClassName}
-          style={buttonStyle}
-          onClick={onClick}
-        >
+        <button type="button" className={buttonClassName} onClick={onClick}>
           {children}
         </button>
       )}
