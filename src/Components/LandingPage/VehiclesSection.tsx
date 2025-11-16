@@ -113,9 +113,8 @@ export default function VehiclesSection() {
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {vehicles.map((vehicle, index) => (
-            <Link
+            <div
               key={index}
-              href="/vehicles"
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100"
             >
               <div className="relative h-56 overflow-hidden [&_.swiper-pagination-bullet]:bg-black [&_.swiper-pagination-bullet]:opacity-50 [&_.swiper-pagination-bullet-active]:bg-secondary [&_.swiper-pagination-bullet-active]:opacity-100">
@@ -213,7 +212,7 @@ export default function VehiclesSection() {
                   ))}
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -229,10 +228,7 @@ export default function VehiclesSection() {
           >
             {vehicles.map((vehicle, index) => (
               <SwiperSlide key={index}>
-                <Link
-                  href="/vehicles"
-                  className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 block"
-                >
+                <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
                   <div className="relative h-56 overflow-hidden [&_.swiper-pagination-bullet]:bg-black [&_.swiper-pagination-bullet]:opacity-50 [&_.swiper-pagination-bullet-active]:bg-secondary [&_.swiper-pagination-bullet-active]:opacity-100">
                     <Swiper
                       modules={[Pagination]}
@@ -332,7 +328,7 @@ export default function VehiclesSection() {
                         ))}
                     </div>
                   </div>
-                </Link>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
