@@ -29,8 +29,11 @@ const getMetadataByLang = (lang: string): Metadata => {
   const keywords =
     "VTC, Marseille, transfert, luxe, professionnel, aéroport, tourisme, business";
 
+  // GitHub Pages base URL
+  const baseUrl = "https://vtc-app.github.io";
+
   return {
-    metadataBase: new URL("https://massiliadrive-bnzj.vercel.app/"),
+    metadataBase: new URL(baseUrl),
     title: titles[lang as keyof typeof titles] || titles["fr"],
     description:
       descriptions[lang as keyof typeof descriptions] || descriptions["fr"],
@@ -41,7 +44,7 @@ const getMetadataByLang = (lang: string): Metadata => {
         descriptions[lang as keyof typeof descriptions] || descriptions["fr"],
       images: [
         {
-          url: "/opengraph-image.jpg",
+          url: `${baseUrl}/opengraph-image.jpg`,
           width: 1200,
           height: 630,
           alt: "MassiliaDrive - VTC Premium",
@@ -49,12 +52,14 @@ const getMetadataByLang = (lang: string): Metadata => {
       ],
       locale: lang === "fr" ? "fr_FR" : "en_US",
       type: "website",
+      url: baseUrl,
     },
     twitter: {
       card: "summary_large_image",
       title: titles[lang as keyof typeof titles] || titles["fr"],
       description:
         descriptions[lang as keyof typeof descriptions] || descriptions["fr"],
+      images: [`${baseUrl}/opengraph-image.jpg`],
     },
   };
 };
