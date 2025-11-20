@@ -322,5 +322,62 @@
     "vehicles": "Véhicules",
     "contact": "Contact",
     "copyright": "© {{year}} MassiliaDrive. Tous droits réservés."
+  },
+
+  "privacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Vos données, notre priorité",
+    "description": "Consultez notre politique de confidentialité concernant la collecte, l'utilisation et la protection de vos données personnelles.",
+    "lastUpdated": "Dernière mise à jour :",
+    "sections": {
+      "1": {
+        "title": "1. Collecte des données",
+        "content": "Nous ne collectons aucune donnée personnelle via notre site. Les informations de contact sont utilisées uniquement pour répondre à vos demandes."
+      },
+      "2": {
+        "title": "2. Utilisation des données",
+        "content": "Les données sont utilisées uniquement pour vous contacter, confirmer une réservation ou vous envoyer des informations liées à votre commande."
+      },
+      "3": {
+        "title": "3. Partage de données",
+        "content": "Nous ne partageons vos données avec aucun tiers, sauf si la loi l'exige."
+      },
+      "4": {
+        "title": "4. Vos droits",
+        "content": "Vous pouvez demander à accéder, modifier ou supprimer vos données à tout moment en nous contactant."
+      },
+      "5": {
+        "title": "5. Cookies",
+        "content": "Nous n'utilisons pas de cookies pour suivre votre navigation."
+      }
+    }
+  },
+  "termsAndConditions": {
+    "title": "Conditions Générales d'Utilisation",
+    "subtitle": "Règles de base",
+    "description": "Consultez nos conditions générales d'utilisation du service VTC à Marseille.",
+    "lastUpdated": "Dernière mise à jour :",
+    "sections": {
+      "1": {
+        "title": "1. Acceptation des conditions",
+        "content": "L'utilisation de ce service implique l'acceptation sans réserve de ces conditions."
+      },
+      "2": {
+        "title": "2. Réservations",
+        "content": "Les réservations doivent être confirmées 24h à l'avance. Des frais peuvent s'appliquer en cas d'annulation tardive."
+      },
+      "3": {
+        "title": "3. Responsabilités",
+        "content": "Nous ne sommes pas responsables des retards causés par des circonstances extérieures (embouteillages, accidents, etc.)."
+      },
+      "4": {
+        "title": "4. Paiement",
+        "content": "Le paiement s'effectue en ligne ou en espèces. Les cartes bancaires sont les bienvenues."
+      },
+      "5": {
+        "title": "5. Modifications",
+        "content": "Nous nous réservons le droit de modifier ces conditions à tout moment. Les utilisateurs en seront informés."
+      }
+    }
   }
 }

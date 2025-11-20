@@ -312,5 +312,62 @@
     "vehicles": "Vehicles",
     "contact": "Contact",
     "copyright": "© {{year}} MassiliaDrive. All rights reserved."
+  },
+
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "subtitle": "Your data, our priority",
+    "description": "Review our privacy policy regarding the collection, use, and protection of your personal data.",
+    "lastUpdated": "Last updated:",
+    "sections": {
+      "1": {
+        "title": "1. Data Collection",
+        "content": "We do not collect any personal data through our website. Contact information is used solely to respond to your requests."
+      },
+      "2": {
+        "title": "2. Use of Data",
+        "content": "Data is used only to contact you, confirm a booking, or send information related to your order."
+      },
+      "3": {
+        "title": "3. Data Sharing",
+        "content": "We do not share your data with any third parties, except if required by law."
+      },
+      "4": {
+        "title": "4. Your Rights",
+        "content": "You can request access, modification, or deletion of your data at any time by contacting us."
+      },
+      "5": {
+        "title": "5. Cookies",
+        "content": "We do not use cookies to track your browsing activity."
+      }
+    }
+  },
+  "termsAndConditions": {
+    "title": "Terms and Conditions",
+    "subtitle": "Basic rules",
+    "description": "Review our terms and conditions for using our VTC service in Marseille.",
+    "lastUpdated": "Last updated:",
+    "sections": {
+      "1": {
+        "title": "1. Acceptance of Terms",
+        "content": "Using this service implies acceptance of these terms without reservation."
+      },
+      "2": {
+        "title": "2. Bookings",
+        "content": "Bookings must be confirmed 24 hours in advance. Cancellation fees may apply for late cancellations."
+      },
+      "3": {
+        "title": "3. Responsibilities",
+        "content": "We are not responsible for delays caused by external circumstances (traffic, accidents, etc.)."
+      },
+      "4": {
+        "title": "4. Payment",
+        "content": "Payment is made online or in cash. Credit cards are welcome."
+      },
+      "5": {
+        "title": "5. Changes",
+        "content": "We reserve the right to modify these terms at any time. Users will be informed accordingly."
+      }
+    }
   }
 }
